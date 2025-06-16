@@ -9,3 +9,10 @@ A bare bones browser extension for extracting novel text from the website popo.t
 3. Go to Manage Extensions
 4. Turn on Developer Mode
 5. Click "Load Unpacked" and choose the file you just downloaded
+
+## Usage
+
+1. Go into any chapter on popo.tw 
+2. Click on extension
+3. Click extract text
+4. Copy text if desired 
