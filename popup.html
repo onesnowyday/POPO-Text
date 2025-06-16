@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Extractor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            width: 300px;
+            font-family: 'Inter', sans-serif;
+            padding: 1rem;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        button {
+            padding: 0.75rem 1.25rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #extractedText {
+            max-height: 200px; /* Limits the height of the overall display area */
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            background-color: #fff;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #555;
+            min-height: 50px;
+            display: flex; /* Make it a flex container */
+            flex-direction: column; /* Stack children vertically */
+            /* Default justify-content and align-items are 'flex-start' and 'stretch' which is good for content flow */
+        }
+
+        /* Class for all content within #extractedText - always left-aligned and scrollable */
+        .content-display-area {
+            text-align: left; /* Always left-align text within this span */
+            white-space: pre-wrap; /* Preserves whitespace and wraps text */
+            word-break: break-word; /* Breaks long words */
+            overflow-y: auto; /* Enables scrolling for overflow content */
+            width: 100%; /* Ensure content fills the width of its parent */
+            flex-grow: 1; /* Allow this item to grow and shrink within the flex container */
+            /* Removed height: 100% here as flex-grow/flex-shrink will manage height based on parent */
+        }
+
+        /* Style for the copy feedback message */
+        #copyFeedback {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #16a34a; /* Green color for success */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        #copyFeedback.show {
+            opacity: 1;
+        }
+
+        /* Rule for centering H1 title */
+        .container h1 {
+            text-align: center !important; /* Use !important to ensure it overrides other styles */
+        }
+    </style>
+</head>
+<body>
+    <div class="container bg-white p-4 rounded-xl shadow-md">
+        <h1 class="text-xl font-bold mb-3 text-center text-blue-700">Text Extractor</h1>
+        <p class="text-sm text-gray-600 mb-4 text-center">Click the button below to extract text from the current page.</p>
+        <button id="extractButton" class="bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-lg shadow-sm">
+            Extract Text
+        </button>
+        <button id="copyButton" class="bg-gray-200 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 rounded-lg shadow-sm mt-2">
+            Copy Text
+        </button>
+        <div id="extractedText" class="mt-4 text-gray-800 bg-gray-50 p-3 rounded-lg border border-gray-200">
+            <!-- This span will contain the actual text and will always be left-aligned and scrollable -->
+            <span id="extractedTextContent" class="content-display-area">
+                No text extracted yet.
+            </span>
+        </div>
+        <div id="copyFeedback" class="mt-2">Text copied!</div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
