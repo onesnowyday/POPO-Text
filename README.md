@@ -1,3 +1,5 @@
+![Extension icon](/icons/icon128.png)
+
 # POPO-Text Browser Extension
 
 A bare bones browser extension for extracting novel text from the website popo.tw. Only tested on Microsoft Edge. 
