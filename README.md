@@ -8,7 +8,7 @@ A bare bones browser extension for extracting novel text from the website popo.t
 2. Extract the ZIP file
 3. Go to Manage Extensions
 4. Turn on Developer Mode
-5. Click "Load Unpacked" and choose the file you just downloaded
+5. Click "Load Unpacked" and choose the folder you just extracted
 
 ## Usage
 
