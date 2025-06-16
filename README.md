@@ -19,5 +19,6 @@ A bare bones browser extension for extracting novel text from the website popo.t
 3. Click extract text
 4. Copy text if desired 
 
+
 > [!IMPORTANT]
 > This does not unlock paid chapters. You will still need to pay for them. 
